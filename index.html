@@ -1,0 +1,62 @@
+<html>
+<head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+
+<script>
+
+    $(function() {
+
+
+   var people = [];
+
+   $.getJSON('Pokemon.json', function(data) {
+       $.each(data.person, function(i, f) {
+          var tblRow = 
+            "<tr>" + 
+                "<td>" + f.Name + "</td>" +
+                "<td>" + f.Types + "</td>" + 
+                "<td>" + f['1x'] + "</td>" + 
+                "<td>" + f['2x'] + "</td>" + 
+                "<td>" + f['4x'] + "</td>" + 
+                "<td>" + f['8x'] + "</td>" + 
+                "<td>" + f['0.5x'] + "</td>" + 
+                "<td>" + f['0.25x'] + "</td>" + 
+                "<td>" + f['0.125x'] + "</td>" + 
+                "<td>" + f['0x'] + "</td>" + 
+            "</tr>"
+           $(tblRow).appendTo("#userdata tbody");
+     });
+
+   });
+
+});
+</script>
+</head>
+
+<body>
+
+<div class="wrapper">
+<div class="profile">
+   <table id= "userdata" border="2">
+  <thead>
+            <th>Name</th>
+            <th>Types</th>
+            <th>1x</th>
+            <th>2x</th>
+            <th>4x</th>
+            <th>8x</th>
+            <th>0.5x</th>
+            <th>0.25x</th>
+            <th>0.125x</th>
+            <th>0x</th>
+        </thead>
+      <tbody>
+
+       </tbody>
+   </table>
+
+</div>
+</div>
+
+</body>
+</html>
